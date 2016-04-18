@@ -4,17 +4,17 @@ Noodlio Pay is an easy, straightforward solution for accepting payments on your 
 
 Essentially, Noodlio Pay replaces your server-side, saving you the time to learn a new server language, test, validate and so on the server-side for your payments. In other words, it's hassle-free payment!
 
-<img src="http://www.seipel-ibisevic.com/assets-external/noodlio-pay/noodlio-pay-banner.png">
-
 **This template** pack consists of two examples (with and without Stripe Checkout.js) that illustrate how to consume the API on the client-side with Ionic/Angular.
 
-Functionalities include:
+**Functionalities** include:
 
 - Validate Credit Card Details
 - Retrieve a StripeToken for the Transaction
 - Customize the meta data and image
 - Charge the user by sending a HTTP Post request to the [Noodlio Pay API](https://market.mashape.com/noodlio/noodlio-pay-smooth-payments-with-stripe)
 - Two starter apps  which can be easily configured following the Ionic Documentation
+
+<img src="http://www.seipel-ibisevic.com/assets-external/noodlio-pay/noodlio-pay-banner.png">
 
 # Try it out
 You can try out the Checkout example on your phone with Ionic View. Please [download it from here](https://view.ionic.io), sign in and enter the following app ID: **997a3b85**.
