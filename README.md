@@ -8,6 +8,17 @@ Essentially, Noodlio Pay replaces your server-side, saving you the time to learn
 
 **This template** pack consists of two examples (with and without Stripe Checkout.js) that illustrate how to consume the API on the client-side with Ionic/Angular.
 
+Functionalities include:
+
+- Validate Credit Card Details
+- Retrieve a StripeToken for the Transaction
+- Customize the meta data and image
+- Charge the user by sending a HTTP Post request to the [Noodlio Pay API](https://market.mashape.com/noodlio/noodlio-pay-smooth-payments-with-stripe)
+- Two starter apps  which can be easily configured following the Ionic Documentation
+
+# Try it out
+You can try out the Checkout example on your phone with Ionic View. Please [download it from here](https://view.ionic.io), sign in and enter the following app ID: **997a3b85**.
+
 # Key benefits
 
 - **It's quick**: You can have a working payment server set up within a few minutes.
@@ -64,17 +75,37 @@ Once you have obtained the token (`source`), you can proceed with charging your 
 The examples in these templates illustrate the use of this process in `ExampleCtrl` (file `example-regular/www/js/app.js`) and in the factory `StripeCharge` (file `example-checkout/www/js/services.js`)
 
 # Pricing
-There are three options for using the API:
 
-If you expect to incur a fluctuating amount of transactions, we recommend that you opt for one of the transaction-based schemes:
+The use of the API hosted on Mashape is free and you can make unlimited requests. [**Click here for an overview of complementary licenses**](https://www.noodl.io/pay/plans)
 
-- **Starter pack**: No license fee. A 5% transaction fee is applied each time a customer is charged.
-- **Intermediate pack**: One-off licence fee of $489. A 2.5% transaction fee is applied each time a customer is charged.
+# FAQ and Troubleshooting
 
-If you expect to incur a significant amount of transactions, we recommend that you opt for a full licence:
+## Packaging and Whitelisting
 
-- **Pro pack**: One-off license fee of $989. No transaction fee is applied.
+If you're using a newer version of Cordova (or the latest Ionic CLI) to develop your app, you may be experiencing http 404 errors when your app tries to make network requests. The [fix is to whitelist](http://docs.ionic.io/docs/cordova-whitelist) a couple of domains that make those http requests:
 
-*Note: Stripe may apply an additional fee of +- 2% per transaction (see: [Stripe Fees](https://stripe.com/pricing))*
+```
+https://checkout.stripe.com
+https://noodlio-pay.p.mashape.com
+```
 
-[**Click here to purchase a license**](https://www.noodl.io/pay/upgrade)
+Example of the error you might encounter:
+
+```
+> Uncaught SecurityError: Blocked a frame with origin https://checkout.stripe.com
+```
+
+## Building for Android
+
+When building the example `example-checkout` for Android, one might encounter the following error:
+
+```
+> Execution failed for task ':processDebugResources'.
+> com.android.ide.common.process.ProcessException: org.gradle.process.internal.ExecException: Process 'command 'C:\Program Files (x86)\AndroidSDK\build-tools\23.0.2\aapt.exe'' finished with non-zero exit value 1
+```
+
+To solve for this issue, please remove the `*.GZ` file inside the bower package.
+
+# Other questions or suggestions
+
+Feel free to drop an email to `noodlio at seipel-ibisevic . com`. We love to hear from you!
