@@ -1,0 +1,31 @@
+<ion-view view-title="Noodlio Pay | Checkout Example">
+  <ion-content class="padding center">
+
+    <div class="padding">
+      <img src="img/perry.png" class="circle">
+      <h2>{{ProductMeta.title}}</h2>
+      <h3>{{ProductMeta.description}}</h3>
+    </div>
+
+    <!--
+    <label class="item item-input">
+      <span class="input-label">Amount in USD</span>
+      <input type="number" ng-model="ProductMeta.priceUSD" placeholder="Amount in USD" min="1" class="input-custom">
+    </label>
+    -->
+
+    <div class="padding">
+      <button class="button button-full button-balanced" ng-click="charge()">Buy for ${{ProductMeta.priceUSD}}</button>
+    </div>
+
+    <p class="padding">
+      <ion-spinner ng-show="status.loading"></ion-spinner>
+    </p>
+
+    <p>
+      {{status.message}}
+    </p>
+
+
+  </ion-content>
+</ion-view>
