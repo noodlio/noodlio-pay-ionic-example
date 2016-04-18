@@ -27,7 +27,7 @@ angular.module('starter.services', [])
       amount: Math.floor(ProductMeta.priceUSD*100), // amount in cents
       currency: "usd",
       description: "Your custom description here",
-      destination: STRIPE_ACCOUNT_ID,
+      stripe_account: STRIPE_ACCOUNT_ID,
       test: TEST_MODE,
     };
     

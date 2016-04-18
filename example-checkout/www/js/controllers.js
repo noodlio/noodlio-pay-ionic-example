@@ -43,8 +43,13 @@ angular.module('starter.controllers', [])
       // then chare the user through your custom node.js server (server-side)
       StripeCharge.chargeUser(stripeToken, $scope.ProductMeta).then(
         function(StripeInvoiceData){
+          
+          if(StripeInvoiceData.hasOwnProperty('id')) {
+            $scope.status['message'] = "Success! Check your Stripe Account";
+          } else {
+            $scope.status['message'] = "Error, check your console";
+          };
           $scope.status['loading'] = false;
-          $scope.status['message'] = "Success! Check your Stripe Account";
           console.log(StripeInvoiceData)
         },
         function(error){
