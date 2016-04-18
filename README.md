@@ -1,4 +1,4 @@
-# Noodlio Pay
+# Noodlio Pay - Smooth Payments with Stripe
 
 Noodlio Pay is an easy, straightforward solution for accepting payments on your website, in your app, or elsewhere on the web. Thanks to the REST setup, your application can immediately start making requests to the API, which validates input and charges your clients for their purchases. As we are using Stripe, all funds will immediately be transferred to your account.
 
@@ -6,7 +6,7 @@ Essentially, Noodlio Pay replaces your server-side, saving you the time to learn
 
 **This template** pack consists of two examples (with and without Stripe Checkout.js) that illustrate how to consume the API on the client-side with Ionic/Angular.
 
-# Key benefits of Noodlio Pay
+# Key benefits
 
 - **It's quick**: You can have a working payment server set up within a few minutes.
 - **No server-side setup needed**: Simply send `HTTP POST` requests to the Noodlio Pay API from the client-side and we'll do the rest for you.
@@ -60,3 +60,19 @@ Some alternative guides/tutorials (in other languages) on how to embed the Check
 Once you have obtained the token (`source`), you can proceed with charging your user by sending the token, along with the `amount`, `description` (optional), `currency` and `stripe_account` through a `HTTP POST` request to the route [`/charge/token`](https://market.mashape.com/noodlio/noodlio-pay-smooth-payments-with-stripe#charge-token). Read more in the [documentation](https://market.mashape.com/noodlio/noodlio-pay-smooth-payments-with-stripe#charge-token)
 
 The examples in these templates illustrate the use of this process in `ExampleCtrl` (file `example-regular/www/js/app.js`) and in the factory `StripeCharge` (file `example-checkout/www/js/services.js`)
+
+# Pricing
+There are three options for using the API:
+
+If you expect to incur a fluctuating amount of transactions, we recommend that you opt for one of the transaction-based schemes:
+
+- **Starter pack**: No license fee. A 5% transaction fee is applied each time a customer is charged.
+- **Intermediate pack**: One-off licence fee of $489. A 2.5% transaction fee is applied each time a customer is charged.
+
+If you expect to incur a significant amount of transactions, we recommend that you opt for a full licence:
+
+- **Pro pack**: One-off license fee of $989. No transaction fee is applied.
+
+*Note: Stripe may apply an additional fee of +- 2% per transaction (see: [Stripe Fees](https://stripe.com/pricing))*
+
+[**Click here to purchase a license**](https://www.noodl.io/pay/upgrade)
