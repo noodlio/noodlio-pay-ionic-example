@@ -4,6 +4,8 @@ Noodlio Pay is an easy, straightforward solution for accepting payments on your 
 
 Essentially, Noodlio Pay replaces your server-side, saving you the time to learn a new server language, test, validate and so on the server-side for your payments. In other words, it's hassle-free payment!
 
+<img src="http://www.seipel-ibisevic.com/assets-external/noodlio-pay/noodlio-pay-banner.png">
+
 **This template** pack consists of two examples (with and without Stripe Checkout.js) that illustrate how to consume the API on the client-side with Ionic/Angular.
 
 # Key benefits
