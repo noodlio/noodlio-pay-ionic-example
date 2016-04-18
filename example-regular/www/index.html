@@ -57,12 +57,15 @@
         </div>
         
         <div class="padding center">
+          <p ng-show="ResponseData.loading">
+            Loading...
+          </p>
           <p ng-show="ResponseData.token">
             Token: <strong>{{ResponseData.token}}</strong>
-          </h2>
+          </p>
           <p ng-show="ResponseData.paymentId">
             Payment Id: <strong>{{ResponseData.paymentId}}</strong>
-          </h2>
+          </p>
         </div>
 
         

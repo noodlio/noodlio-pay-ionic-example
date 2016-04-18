@@ -57,7 +57,9 @@ angular.module('starter', ['ionic'])
   $scope.createToken = function() {
     
     // init for the DOM
-    $scope.ResponseData = {};
+    $scope.ResponseData = {
+      loading: true
+    };
     
     // create a token and validate the credit card details
     $http.post(NOODLIO_PAY_API_URL + "/tokens/create", $scope.FormData)
@@ -70,14 +72,18 @@ angular.module('starter', ['ionic'])
         if(response.hasOwnProperty('id')) {
           var token = response.id; $scope.ResponseData['token'] = token;
           proceedCharge(token);
+        } else {
+          $scope.ResponseData['token'] = 'Error, see console';
+          $scope.ResponseData['loading'] = false;
         };
-        
+
       }
     )
     .error(
       function(response){
         console.log(response)
-        $scope.ResponseData['paymentId'] = 'Error, see console';
+        $scope.ResponseData['token'] = 'Error, see console';
+        $scope.ResponseData['loading'] = false;
       }
     );
   };
@@ -99,10 +105,13 @@ angular.module('starter', ['ionic'])
       function(response){
         
         // --> success
-        console.log(response)
+        console.log(response);
+        $scope.ResponseData['loading'] = false;
         
         if(response.hasOwnProperty('id')) {
           var paymentId = response.id; $scope.ResponseData['paymentId'] = paymentId;
+        } else {
+          $scope.ResponseData['paymentId'] = 'Error, see console';
         };
         
       }
@@ -111,6 +120,7 @@ angular.module('starter', ['ionic'])
       function(response){
         console.log(response)
         $scope.ResponseData['paymentId'] = 'Error, see console';
+        $scope.ResponseData['loading'] = false;
       }
     );
   };
