@@ -5,7 +5,7 @@ If you have previously downloaded Stripe Charge / Stripe Payments Kit from eithe
 
 ## Step 1: Connect your account to Noodlio Pay and obtain your Stripe Account ID
 
-Please visit the following link:
+Please visit the following links (just once per link):
 
 - Production mode:
 [https://www.noodl.io/pay/connect](https://www.noodl.io/pay/connect)
