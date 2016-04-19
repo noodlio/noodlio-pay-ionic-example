@@ -63,12 +63,15 @@ Head over to your `services.js` (or wherever you have the factory `StripeCharge`
   $http.defaults.headers.common['X-Mashape-Key']  = NOODLIO_PAY_API_KEY;
   $http.defaults.headers.common['Content-Type']   = 'application/x-www-form-urlencoded';
   $http.defaults.headers.common['Accept']         = 'application/json';
+
+  // ...
 ```
 
 ## Step 5: Replace `self.chargeUser()`
 
 Replace `self.chargeUser()` in the factory `StripeCharge` with the following lines of code:
 
+```
 self.chargeUser = function(stripeToken, ProductMeta) {
     var qCharge = $q.defer();
 
@@ -101,9 +104,10 @@ self.chargeUser = function(stripeToken, ProductMeta) {
     );
     return qCharge.promise;
   };
+```
 
-  # That's it, you're done
+# That's it, you're done
 
-  You should be able to receive payments now with the new Noodlio Pay API. If you are having troubles or issues, please send us an email at `noodlio@seipel-ibisevic.com` with your files and we can always make the changes for you.
+You should be able to receive payments now with the new Noodlio Pay API. If you are having troubles or issues, please send us an email at `noodlio@seipel-ibisevic.com` with your files and we can always make the changes for you.
 
-  Take care, the Noodlio Team
+Take care, the Noodlio Team
