@@ -10,7 +10,7 @@ var NOODLIO_PAY_API_KEY         = "3fEagjJCGAmshMqVnwTR70bVqG3yp1lerJNjsnTzx5ODe
 var STRIPE_ACCOUNT_ID           = "<YOUR-UNIQUE-ID>";
 
 // Define whether you are in development mode (TEST_MODE: true) or production mode (TEST_MODE: false)
-var TEST_MODE = true;
+var TEST_MODE = false;
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)

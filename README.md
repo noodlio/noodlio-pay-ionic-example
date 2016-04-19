@@ -17,7 +17,7 @@ Essentially, Noodlio Pay replaces your server-side, saving you the time to learn
 - Two starter apps  which can be easily configured following the Ionic Documentation
 
 # Try it out
-You can try out the Checkout example on your phone with Ionic View. Please [download it from here](https://view.ionic.io), sign in and enter the following app ID: **997a3b85**.
+You can try out the Checkout example on your phone with Ionic View. Please [download it from here](https://view.ionic.io), sign in and enter the following app ID: **b8b71a84**.
 
 # Key benefits
 
