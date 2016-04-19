@@ -5,7 +5,7 @@ If you have previously downloaded Stripe Charge / Stripe Payments Kit from eithe
 
 ## Step 1: Connect your account to Noodlio Pay and obtain your Stripe Account ID
 
-Please visit the following links (just once per link):
+Please visit the following links:
 
 - Production mode:
 [https://www.noodl.io/pay/connect](https://www.noodl.io/pay/connect)
@@ -50,7 +50,33 @@ var TEST_MODE = true;
 
 And now, make sure to add replace `<YOUR-UNIQUE-ID>` with your Stripe Account Id obtained in **Step 1**.
 
-## Step 4: Update the factory `StripeCharge`
+## Step 4: Update the config with the new environments
+
+In the file `app.js`, head over to the part that starts with `.config` and specifically **remove** the following lines of code:
+
+```
+// Define your STRIPE_API_PUBLISHABLE_KEY
+StripeCheckoutProvider.defaults({key: STRIPE_API_PUBLISHABLE_KEY});
+```
+
+and **replace** it with:
+
+```
+// Defines your checkout key
+switch (TEST_MODE) {
+  case true:
+    //
+    StripeCheckoutProvider.defaults({key: NOODLIO_PAY_CHECKOUT_KEY['test']});
+    break
+  default:
+    //
+    StripeCheckoutProvider.defaults({key: NOODLIO_PAY_CHECKOUT_KEY['live']});
+    break
+};
+```
+
+
+## Step 5: Update the factory `StripeCharge`
 
 Head over to your `services.js` (or wherever you have the factory `StripeCharge`). Add the following line of code at the top of the factory (after the line `var self = this`):
 
@@ -67,7 +93,7 @@ Head over to your `services.js` (or wherever you have the factory `StripeCharge`
   // ...
 ```
 
-## Step 5: Replace `self.chargeUser()`
+## Step 6: Replace `self.chargeUser()`
 
 Replace `self.chargeUser()` in the factory `StripeCharge` with the following lines of code:
 
