@@ -32,23 +32,59 @@ You can try out the Checkout example on your phone with Ionic View. Please [down
 
 # How it works
 
-## 0. Get your unique Stripe Account ID
+## 0. Stripe and Mashape Setup
 
-To use the API, you'll first need to [have a  Stripe account](https://www.stripe.com). After that, you'll need to retrieve your unique Stripe Account ID (field: `stripe_account`), which you can obtain on the following page after connecting with Noodlio Pay (you'll only need to do this once per mode):
+We first need to define a couple of constants in our app. If you are working with Angular/Ionic `v1.x`, head over to `app.js` and you'll see the following:
 
-For the production mode:
+```
+// Stripe Payments API
+// Obtain from:
+// - https://market.mashape.com/noodlio/noodlio-pay-smooth-payments-with-stripe
+var NOODLIO_PAY_API_URL         = "https://noodlio-pay.p.mashape.com";
+var NOODLIO_PAY_API_KEY         = "<YOUR-MASHAPE-API-KEY>";
+
+// Stripe Account
+// Connect on both:
+// - https://www.noodl.io/pay/connect and
+// - https://www.noodl.io/pay/connect/test
+var STRIPE_ACCOUNT_ID           = "<YOUR-STRIPE-ACCOUNT-ID>"
+
+// Define whether you are in development mode (TEST_MODE: true) or production mode (TEST_MODE: false)
+var TEST_MODE = false;
+```
+
+The `NOODLIO_PAY_API_URL` is basically the location of the server and is fixed. The variable `TEST_MODE` simply takes the values `true` or `false` and defines whether we are in test mode (development) or production (actually charging the user). Now let's define two constants:
+
+**Mashape**
+
+To consume the Stripe Payments API, we'll need to obtain our unique `NOODLIO_PAY_API_KEY`. To do so, head over to [Mashape](https://market.mashape.com/noodlio/noodlio-pay-smooth-payments-with-stripe) and click on the right "Get your API Keys and Start Hacking" or press on "Sign up free".
+
+[<img src="http://noodlio-templates.firebaseapp.com/noodlio-pay/img/mashape-api-keys.png">](https://market.mashape.com/noodlio/noodlio-pay-smooth-payments-with-stripe)
+
+After you are signed in, you'll find your unique API Key in the request example on the [Stripe Payments API page](https://market.mashape.com/noodlio/noodlio-pay-smooth-payments-with-stripe):
+
+```
+curl -X POST --include 'https://noodlio-pay.p.mashape.com/charge/token' \
+  -H 'X-Mashape-Key: <YOUR-MASHAPE-API-KEY>' \
+  -H 'Content-Type: application/x-www-form-urlencoded' \
+  -H 'Accept: application/json' \
+  ... other values
+```
+
+Replace the `NOODLIO_PAY_API_KEY` with this unique identifier.
+
+**Stripe Account**
+
+If you haven't already [sign up for a Stripe Account](https://www.stripe.com). After that, you'll need to retrieve your unique Stripe Account ID (field: `stripe_account`), which you can obtain on the following pages (Note: you'll need to visit both links once):
+
+- For the production mode:
 [https://www.noodl.io/pay/connect](https://www.noodl.io/pay/connect)
-
-For the development mode:
+- For the development mode:
 [https://www.noodl.io/pay/connect/test](https://www.noodl.io/pay/connect/test)
 
-The unique Stripe Account ID looks something like this:
+The Stripe Account ID looks something like `acct_12abcDEF34GhIJ5K`. Replace the constant `STRIPE_ACCOUNT_ID` wherever you have defined it.
 
-```
-acct_12abcDEF34GhIJ5K
-```
-
-In these templates, cd into the appropriate folder, open `app.js` and replace the constant `STRIPE_ACCOUNT_ID` with this value.
+That's it. Our server is configured and ready to receive payments.
 
 ## 1. Obtain the Stripe token (`source`)
 
