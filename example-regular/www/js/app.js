@@ -1,16 +1,24 @@
 // Noodlio Pay
 // Example with Noodlio Pay API (Option 1)
 
-// These are fixed values, do not change this
-var NOODLIO_PAY_API_URL         = "https://noodlio-pay.p.mashape.com"; 
-var NOODLIO_PAY_API_KEY         = "3fEagjJCGAmshMqVnwTR70bVqG3yp1lerJNjsnTzx5ODeOa99V";
+// ---------------------------------------------------------------------------------------------------------
+// !important settings
+// Please fill in the following constants to get the project up and running
+// You might need to create an account for some of the constants.
+
+// Obtain your unique Mashape ID from here:
+// https://market.mashape.com/noodlio/noodlio-pay-smooth-payments-with-stripe
+var NOODLIO_PAY_API_URL         = "https://noodlio-pay.p.mashape.com";
+var NOODLIO_PAY_API_KEY         = "<YOUR-UNIQUE-MASHAPE-ID>";
 
 // Obtain your unique Stripe Account Id from here:
 // https://www.noodl.io/pay/connect
-var STRIPE_ACCOUNT_ID           = "<YOUR-UNIQUE-ID>";
+// Please also connect your account on this address
+// https://www.noodl.io/pay/connect/test
+var STRIPE_ACCOUNT_ID           = "<YOUR-UNIQUE-STRIPE-ID>";
 
 // Define whether you are in development mode (TEST_MODE: true) or production mode (TEST_MODE: false)
-var TEST_MODE = false;
+var TEST_MODE = true;
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
