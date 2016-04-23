@@ -1,8 +1,9 @@
 
 # How to update your Stripe template to V2 (Noodlio Pay)
 
-If you have previously downloaded Stripe Charge / Stripe Payments Kit from either Ionic Market or [Noodlio](https://www.noodl.io), then follow these instructions to update your template to the latest Noodlio Pay API. You can read more about Noodlio Pay [here](https://www.noodl.io/market/product/P201604181926406/noodlio-pay-smooth-payments-with-stripe-accept-payments-without-a-server-side-setup).
+This file has been depreciated and replaced with the following repository:
 
+<<<<<<< HEAD
 ## Step 1: Connect your account to Noodlio Pay and obtain your Stripe Account ID
 
 Please visit the following links:
@@ -137,3 +138,6 @@ self.chargeUser = function(stripeToken, ProductMeta) {
 You should be able to receive payments now with the new Noodlio Pay API. If you are having troubles or issues, please send us an email at `noodlio@seipel-ibisevic.com` with your files and we can always make the changes for you.
 
 Take care, the Noodlio Team
+=======
+[https://github.com/noodlio/noodlio-pay-documentation-updates](https://github.com/noodlio/noodlio-pay-documentation-updates)
+>>>>>>> 28e53c79e2d50ad983165ea4dcd7ef221692fc0e
