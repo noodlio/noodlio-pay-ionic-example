@@ -117,7 +117,7 @@ The examples in these templates illustrate the use of this process in `ExampleCt
 
 # Pricing
 
-The use of the API hosted on Mashape is free and you can make unlimited requests. [**Click here for an overview of complementary licenses**](https://www.noodl.io/pay/plans)
+The use of the API hosted on Mashape is free and you can make unlimited requests. [**Click here for an overview of complementary licenses**](https://www.noodliopay.com/pricing)
 
 # FAQ and Troubleshooting
 
